@@ -1,0 +1,85 @@
+/* this makes the body element take up the full page */
+
+/* Palette:
+*  base_gray      = 393A4D;
+*  pale_red       = FF5A53;
+*  paler_red      = E97168;
+*  background_red = E1D7C8;
+*  darker_red     = CC3440;
+*  darker_gray    = 3A3433;
+*/
+
+html {
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height:100%
+}
+
+header {
+    border-style: dotted;
+
+    display:flex;
+    flex-direction: row;
+
+    min-height: 100px;
+}
+
+.home_button_wrapper {
+    margin-left: 20px;
+    margin-right: 100px;
+}
+
+.home_button {
+    height:100px;
+}
+
+#top_home_button_image {
+    display: block;
+    object-fit: contain;
+    height: 100px;
+}
+
+.top_menu {
+    min-height:100%;
+}
+.top_menu_item_list {
+    display:flex;
+}
+.top_menu_button {
+    
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+#main_content {
+    position:relative;
+    border-style: dashed;
+    min-height: 10px;
+}
+
+.content_pane {
+    min_height: 100%
+}
+
+#footer {
+    /* Random boilerplate start */
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    /* Random boilerplate end */
+    min-height: 100px;
+    border-style: solid;
+}
