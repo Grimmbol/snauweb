@@ -1,39 +1,114 @@
-/* this makes the body element take up the full page */
+:root {
+    --dark-grey-blue: #393A4D;
+    --grapefruit: #FF5A53;
+    --warm-grey: #969090;
+    --very-light-pink: #d8d8d8;
+    /* Variables are not yet usable in media queries yet,
+     * so this is just kept here just as a helpfull reminder*/
+    --small-screen-threshold: 705px;
 
-/* Palette:
-*  base_gray      = 393A4D;
-*  pale_red       = FF5A53;
-*  paler_red      = E97168;
-*  background_red = E1D7C8;
-*  darker_red     = CC3440;
-*  darker_gray    = 3A3433;
-*/
+    --home-button-width-large: 400px;
+    --home-button-width-small: 100px;
+}
 
-html {
-    height: 100%;
-    margin: 0;
-    box-sizing: border-box;
+/* styling reset starts here */
+
+ul {
+    list-style-type: none;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    padding-inline-start: 0px;
+}
+
+li {
+    text-align: left;
 }
 
 body {
-    position: relative;
-    margin: 0;
-    padding-bottom: 6rem;
-    min-height:100%
+    margin: 0px;
+}
+/* styling reset ends here */
+
+/* Overall page structure */
+#content_wrapper {
+    font-family: sans-serif;
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
     border-style: dotted;
-
-    display:flex;
-    flex-direction: row;
-
-    min-height: 100px;
+    flex-shrink: 0;
 }
 
-.home_button_wrapper {
+main {
+    flex-grow: 1;
+}
+
+footer {
+    height: 100px;
+    border-style: solid;
+    flex-shrink: 0;
+}
+
+/* Here comes the children of the header */
+#header_content {
+    border-style: dashed;
+    display: flex;
+}
+
+#home_button_wrapper {
+    flex-grow: 2;
+    display: flex;
+    border-style: solid;
+    
+}
+
+
+#home_button {
+    margin-left:20px;
+    border-style: solid;
+}
+
+#home_button_image {
+    width: 50px;
+    height: 50px;
+}
+
+#header_divider {
+    flex-grow: 4;
+}
+
+#header_menu {
+    border-style: solid;
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+}
+
+.header_menu_item {
+    border-style: solid;
+    flex: 1;
     margin-left: 20px;
-    margin-right: 100px;
+    padding-top: auto;
+    text-align: center;
+}
+
+/* Small screen, make menu more compact */
+@media(max-width: 705px) {
+    #header_menu {
+	min-width: 100px;
+	flex-direction: column;
+	align-items: center;
+    }
+
+    #home_button_wrapper {
+	color: green;
+	flex-grow: 1;
+	flex-base: 100px;
+    }
 }
 
 .home_button {
@@ -44,42 +119,4 @@ header {
     display: block;
     object-fit: contain;
     height: 100px;
-}
-
-.top_menu {
-    min-height:100%;
-}
-.top_menu_item_list {
-    display:flex;
-}
-.top_menu_button {
-    
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
-
-#main_content {
-    position:relative;
-    border-style: dashed;
-    min-height: 10px;
-}
-
-.content_pane {
-    min_height: 100%
-}
-
-#footer {
-    /* Random boilerplate start */
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    /* Random boilerplate end */
-    min-height: 100px;
-    border-style: solid;
 }
